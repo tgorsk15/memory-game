@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 import { Footer } from './components/footer';
-import { GameBody } from './components/gameBody';
+import { GameStart } from './components/gameBody';
 import { Header } from './components/header';
+import { easyGame, mediumGame, hardGame } from './components/data';
 
 import './App.css'
 
@@ -17,12 +18,12 @@ function App() {
         
       />
 
-      <GameBody
+      <GameStart
       
       />
 
       <Footer
-        
+
       />
     </div>
     
