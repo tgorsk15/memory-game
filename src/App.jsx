@@ -10,7 +10,8 @@ import { easyGame, mediumGame, hardGame } from './components/data';
 import './App.css'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  // this will set the number of cards of the game
+  // const [cardCount, setCards] = useState(0);
 
   return (
     <div className='main-container'>

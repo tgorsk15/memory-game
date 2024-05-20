@@ -5,9 +5,9 @@ export const easyGame = {
 }
 
 export const mediumGame = {
-    cards: 14
+    cards: 12
 }
 
 export const hardGame = {
-    cards: 20
+    cards: 18
 }
