@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react"
 import { GameBoard } from "./gameUI/gameBoard";
+import { easyGame, mediumGame, hardGame } from "./data";
 
-export function GameStart({ currentData, dataChange }) {
+
+export function GameStart({ currentData, dataChange, gameMode, changeGameMode }) {
     const [boardVisible, setBoardState] = useState(false);
 
-    function handleStartClick() {
-        setBoardState(true)
+    function handleStartClick(chosenGameMode) {
+        setBoardState(true);
+        changeGameMode(chosenGameMode);
     }
 
     function handleSelectData(characterData) {
@@ -54,29 +57,39 @@ export function GameStart({ currentData, dataChange }) {
 
 
     console.log('running now')
-    console.log(currentData);
 
     return (
         <div className="start-game-container">
             Game Start
             <button
-                onClick={handleStartClick}
+
+                onClick={(e) => {
+                    e.preventDefault()
+                    handleStartClick(easyGame);
+                }}
             >
                 Easy
             </button>
             <button
-                onClick={handleStartClick}
+                onClick={(e) => {
+                    e.preventDefault()
+                    handleStartClick(mediumGame);
+                }}
             >
                 Moderate
             </button>
             <button
-                onClick={handleStartClick}
+                onClick={(e) => {
+                    e.preventDefault()
+                    handleStartClick(hardGame);
+                }}
             >
                 Challenging
             </button>
 
             {boardVisible && <GameBoard
                 currentData = {currentData}
+                gameMode = {gameMode}
             />}
         </div>
     )
