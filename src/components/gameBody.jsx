@@ -1,5 +1,6 @@
 import { useState } from "react"
 import App from "../App"
+import { GameBoard } from "./gameUI/gameBoard";
 
 export function GameStart() {
     const [boardVisible, setBoardState] = useState(false);
@@ -24,15 +25,10 @@ export function GameStart() {
 }
 
 
-function GameBoard() {
 
 
-    return (
-        <div className="gameboard-container">
-            Test
-        </div>
-    )
-}
+// make an array that stores each instance of a card, which is then mapped through to
+// generate the initial gameboard of cards
 
 // make an array that stores the IDs of each unique card when one is clicked.
 // whenever the user clicks on a card, it must get checked against the array to
@@ -43,5 +39,5 @@ function GameBoard() {
 
 // a card click should trigger a re-render of a component
 
-//App.jsx has to trigger the "Select Game Type screen"... then once the user selects
+// App.jsx has to trigger the "Select Game Type screen"... then once the user selects
 // their game, the gameApp itself will be triggered
