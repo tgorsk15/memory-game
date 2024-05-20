@@ -1,33 +1,60 @@
 import { useState, useEffect } from "react"
 import { GameBoard } from "./gameUI/gameBoard";
 
-export function GameStart() {
+export function GameStart({ currentData, dataChange }) {
     const [boardVisible, setBoardState] = useState(false);
 
     function handleStartClick() {
         setBoardState(true)
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('https://harry-potter-api-3a23c827ee69.herokuapp.com/api/characters')
-            console.log(response)
+    function handleSelectData(characterData) {
+        const activeCharacters = []
+        for (let i = 0; i < 18; i++) {
+            activeCharacters.push(characterData[i]);
+        }
+        console.log(activeCharacters)
+        dataChange(activeCharacters);
+    }
 
-            if (!response.ok) {
-                alert('Please enter a valid location!')
-                throw new Error('Request failed');
+
+    useEffect(() => {
+        let ignore = false
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://harry-potter-api-3a23c827ee69.herokuapp.com/api/characters',
+                {mode: 'cors'})
+
+                if (!response.ok) {
+                    alert('Please enter a valid location!')
+                    throw new Error('Request failed');
+                }
+
+                const characterData = await response.json()
+                // console.log(characterData)
+
+                if (!ignore) {
+                    handleSelectData(characterData)
+                }
+                
+
+            } catch(error) {
+                console.log(error)
             }
 
-            const harryPotterData = await response.json()
-            console.log(harryPotterData)
+            
         }
 
         fetchData();
+        return () => {
+            ignore = true;
+        };
 
     }, [])
 
 
-
+    console.log('running now')
+    console.log(currentData);
 
     return (
         <div className="start-game-container">
@@ -48,7 +75,9 @@ export function GameStart() {
                 Challenging
             </button>
 
-            {boardVisible && <GameBoard/>}
+            {boardVisible && <GameBoard
+                currentData = {currentData}
+            />}
         </div>
     )
 

@@ -1,13 +1,16 @@
 
 
 export const easyGame = {
-    cards: 6
+    currentScore: 0,
+    maxScore: 6
 }
 
 export const mediumGame = {
-    cards: 12
+    currentScore: 0,
+    maxScore: 12
 }
 
 export const hardGame = {
-    cards: 18
+    currentScore: 0,
+    maxScore: 18
 }

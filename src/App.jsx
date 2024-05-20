@@ -12,6 +12,7 @@ import './App.css'
 function App() {
   // this will set the number of cards of the game
   // const [cardCount, setCards] = useState(0);
+  const [characterData, setData] = useState([])
 
   return (
     <div className='main-container'>
@@ -20,12 +21,14 @@ function App() {
       />
 
       <GameStart
-      
+        currentData = {characterData}
+        dataChange = {setData}
       />
 
       <Footer
 
       />
+      {console.log(characterData)}
     </div>
     
   )
