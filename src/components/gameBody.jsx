@@ -48,6 +48,7 @@ export function GameStart({
                     throw new Error('Request failed');
                 }
 
+                // potentially store this in a state variable, to use on game reset
                 const characterData = await response.json()
                 if (!ignore) {
                     handleSelectData(characterData)

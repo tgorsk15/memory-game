@@ -7,6 +7,7 @@ import { Header } from './components/header';
 
 import './App.css'
 import './styles/gameBoard.css'
+import './styles/pageStructure.css'
 
 function App() {
   // this will set the number of cards of the game

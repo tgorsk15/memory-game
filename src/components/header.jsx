@@ -4,8 +4,8 @@ export function Header() {
 
 
     return (
-        <div className="header-container">
+        <nav className="header-container">
             Header
-        </div>
+        </nav>
     )
 }

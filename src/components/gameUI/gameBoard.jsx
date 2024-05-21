@@ -19,9 +19,7 @@ export function GameBoard({
             const pointAdd = addPoint();
             if (pointAdd === true) {
                 const oldData = [...currentData]
-                console.log('re-ordering')
                 const newData = randomizeOrder(oldData)
-                console.log(newData);
                 dataChange(newData);
             }
         }
@@ -40,7 +38,8 @@ export function GameBoard({
         const repeatCheck = 
             cardStorage.some(item => JSON.stringify(item) === JSON.stringify(character))
         console.log(repeatCheck);
-        //add to card Memory if not a repeat:
+        
+        //  add to card Memory and change state if not a repeat:
         if (repeatCheck === false) {
             tempMemory.push(character);
             changeCardMemory(tempMemory)
