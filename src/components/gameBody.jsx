@@ -1,19 +1,32 @@
 import { useState, useEffect } from "react"
 import { GameBoard } from "./gameUI/gameBoard";
 import { easyGame, mediumGame, hardGame } from "./data";
+import { randomizeOrder } from "./randomizeFunction";
 
 
 export function GameStart({ currentData, dataChange, gameMode, changeGameMode }) {
     const [boardVisible, setBoardState] = useState(false);
 
     function handleStartClick(chosenGameMode) {
+        const tempCharacterData = [...currentData];
+
+        adjustCharacterData(chosenGameMode, tempCharacterData);
         setBoardState(true);
+        
+    }
+
+    function adjustCharacterData(chosenGameMode, tempData) {
+        const newData = randomizeOrder(tempData).slice(0, chosenGameMode.maxScore)
+        console.log(newData);
+        
+        dataChange(newData);
         changeGameMode(chosenGameMode);
     }
 
+
     function handleSelectData(characterData) {
         const activeCharacters = []
-        for (let i = 0; i < 18; i++) {
+        for (let i = 0; i < 25; i++) {
             activeCharacters.push(characterData[i]);
         }
         console.log(activeCharacters)
@@ -90,6 +103,7 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
                 currentData = {currentData}
                 dataChange = {dataChange}
                 gameMode = {gameMode}
+                changeGameMode = {changeGameMode}
             />}
         </div>
     )

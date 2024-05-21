@@ -1,4 +1,6 @@
-export function GameBoard({ currentData, dataChange, gameMode }) {
+import { randomizeOrder } from './../randomizeFunction';
+
+export function GameBoard({ currentData, dataChange, gameMode, changeGameMode }) {
     // here each click of a card will trigger a re-render of the board
     // re-order the cards
 
@@ -7,33 +9,16 @@ export function GameBoard({ currentData, dataChange, gameMode }) {
     console.log(currentData)
     console.log(gameMode)
     
-    // NOT WORKING:
-    const newArray = randomizeOrder([45, 6, 23, 5, 80, 9, 11, 32, 28, 3])
-    console.log(newArray)
+    // test:
+    // const newArray = randomizeOrder([45, 6, 23, 5, 80, 9, 11, 32, 28, 3])
+    // console.log(newArray)
 
-    function randomizeOrder(array) {
-        // let currentIndex = array.lnegth;
+    
 
-        // while (currentIndex !== 0) {
-        //     let randomIndex = Math.floor(Math.random() * currentIndex);
-        //     currentIndex--;
-
-        //     [array[currentIndex], array[randomIndex]] = 
-        //     [array[randomIndex], array[currentIndex]];
-        // }
-        // console.log(array)
-
-        // return array
-
-        for (let i = array.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let temp = array[i];
-            array[i] = array[j];
-            array[j] = temp
-        }
-
-        return array
-
+    function handleCardClick(currentGameState) {
+        // maybe create a temp variable here to equal gameMode.
+        // then I can modify the score of hat variable, and then trigger
+        // the setGameMode function
     }
 
     
@@ -60,3 +45,4 @@ export function GameBoard({ currentData, dataChange, gameMode }) {
         </div>
     )
 }
+
