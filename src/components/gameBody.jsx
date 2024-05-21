@@ -29,7 +29,6 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
                 {mode: 'cors'})
 
                 if (!response.ok) {
-                    alert('Please enter a valid location!')
                     throw new Error('Request failed');
                 }
 
