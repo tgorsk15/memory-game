@@ -1,3 +1,10 @@
+.gameboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
 .card-portrait {
     height: 240px;
     /* display: none; */

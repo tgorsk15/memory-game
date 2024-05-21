@@ -1,21 +1,41 @@
 import { randomizeOrder } from './../randomizeFunction';
 
-export function GameBoard({ currentData, dataChange, gameMode, changeGameMode }) {
+export function GameBoard({ 
+        currentData, dataChange, 
+        gameMode, changeGameMode,
+        cardStorage, changeCardMemory
+    }) {
     // here each click of a card will trigger a re-render of the board
     // re-order the cards
 
-    // will also create the array here that keeps track of cards have 
-    // been clicked already
     console.log(currentData)
     console.log(gameMode)
 
     
 
     function handleCardClick(character) {
+        checkForRepeat()
+        
+
+
+        addPoint()
+        
         // maybe create a temp variable here to equal gameMode.
         // then I can modify the score of hat variable, and then trigger
         // the setGameMode function
         console.log(character)
+    }
+
+    function checkForRepeat() {
+        const tempMemory = [...cardStorage]
+
+
+        //add to card Memory if not a repeat:
+
+    }
+
+    function addPoint() {
+        // check for win here as well
     }
 
     

@@ -14,6 +14,7 @@ function App() {
 
   const [characterData, setData] = useState([])
   const [gameMode, setGameMode] = useState({});
+  const [cardStorage, setCardMemory] = useState([]);
 
   return (
     <div className='main-container'>
@@ -26,13 +27,14 @@ function App() {
         dataChange = {setData}
         gameMode = {gameMode}
         changeGameMode = {setGameMode}
+        cardStorage = {cardStorage}
+        changeCardMemory = {setCardMemory}
       />
 
       <Footer
 
       />
       {console.log(characterData)}
-      {console.log(gameMode)}
 
     </div>
     
