@@ -14,10 +14,17 @@ export function GameBoard({
     
 
     function handleCardClick(character) {
-        const isRepeat =checkForRepeat(character)
-        if (isRepeat === false) (
-            addPoint()
-        )
+        const isRepeat = checkForRepeat(character)
+        if (isRepeat === false) {
+            const pointAdd = addPoint();
+            if (pointAdd === true) {
+                const oldData = [...currentData]
+                console.log('re-ordering')
+                const newData = randomizeOrder(oldData)
+                console.log(newData);
+                dataChange(newData);
+            }
+        }
 
         
         
@@ -52,10 +59,10 @@ export function GameBoard({
         tempGame.currentScore++
         if (tempGame.currentScore === tempGame.maxScore) {
             alert('game won!!')
-            return
+            return false
         }
         changeGameMode(tempGame);
-        console.log('point added')
+        return true
 
     }
 
