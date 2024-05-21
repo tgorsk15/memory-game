@@ -6,25 +6,37 @@ export function GameBoard({ currentData, dataChange, gameMode }) {
     // been clicked already
     console.log(currentData)
     console.log(gameMode)
+    
+    // NOT WORKING:
+    const newArray = randomizeOrder([45, 6, 23, 5, 80, 9, 11, 32, 28, 3])
+    console.log(newArray)
 
-    // maybe trigger a function right away here that randomely shuffles the character
-    // array, so that each time a card is clicked, a new order of cards is set
     function randomizeOrder(array) {
-        let currentIndex = array.lnegth;
+        // let currentIndex = array.lnegth;
 
-        while (currentIndex !== 0) {
-            let randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
+        // while (currentIndex !== 0) {
+        //     let randomIndex = Math.floor(Math.random() * currentIndex);
+        //     currentIndex--;
 
-            [array[currentIndex], array[randomIndex]] = 
-            [array[randomIndex], array[currentIndex]];
+        //     [array[currentIndex], array[randomIndex]] = 
+        //     [array[randomIndex], array[currentIndex]];
+        // }
+        // console.log(array)
+
+        // return array
+
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp
         }
-        console.log(array)
 
         return array
+
     }
 
-
+    
 
     // use another useEffect() here??
     // maybe have the Effect just be a check to see if the card that was clicked
