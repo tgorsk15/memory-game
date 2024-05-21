@@ -9,13 +9,11 @@ export function GameBoard({
     // re-order the cards
 
     console.log(currentData)
-    console.log(gameMode)
-
+    console.log(cardStorage);
     
 
     function handleCardClick(character) {
-        checkForRepeat()
-        
+        checkForRepeat(character)
 
 
         addPoint()
@@ -23,14 +21,22 @@ export function GameBoard({
         // maybe create a temp variable here to equal gameMode.
         // then I can modify the score of hat variable, and then trigger
         // the setGameMode function
-        console.log(character)
     }
 
-    function checkForRepeat() {
+    function checkForRepeat(character) {
         const tempMemory = [...cardStorage]
+        console.log(character)
 
-
+        const repeatCheck = 
+            cardStorage.some(item => JSON.stringify(item) === JSON.stringify(character))
+        console.log(repeatCheck);
         //add to card Memory if not a repeat:
+        if (repeatCheck === false) {
+            tempMemory.push(character);
+            changeCardMemory(tempMemory)
+        } else if (repeatCheck === true) {
+            alert('Game Lost!')
+        }
 
     }
 
