@@ -8,17 +8,14 @@ export function GameBoard({ currentData, dataChange, gameMode, changeGameMode })
     // been clicked already
     console.log(currentData)
     console.log(gameMode)
-    
-    // test:
-    // const newArray = randomizeOrder([45, 6, 23, 5, 80, 9, 11, 32, 28, 3])
-    // console.log(newArray)
 
     
 
-    function handleCardClick(currentGameState) {
+    function handleCardClick(character) {
         // maybe create a temp variable here to equal gameMode.
         // then I can modify the score of hat variable, and then trigger
         // the setGameMode function
+        console.log(character)
     }
 
     
@@ -34,6 +31,10 @@ export function GameBoard({ currentData, dataChange, gameMode, changeGameMode })
                 <div
                     key={character.id}
                     className="card-container"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        handleCardClick(character);
+                    }}
                 >
                     <img src={character.image} alt="character" className="card-portrait" />
                     <h3 className="character-title">{character.name}</h3> 

@@ -4,7 +4,11 @@ import { easyGame, mediumGame, hardGame } from "./data";
 import { randomizeOrder } from "./randomizeFunction";
 
 
-export function GameStart({ currentData, dataChange, gameMode, changeGameMode }) {
+export function GameStart({ 
+        currentData, dataChange, 
+        gameMode, changeGameMode,
+        cardStorage, changeCardMemory    
+    }) {
     const [boardVisible, setBoardState] = useState(false);
 
     function handleStartClick(chosenGameMode) {
@@ -18,7 +22,7 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
     function adjustCharacterData(chosenGameMode, tempData) {
         const newData = randomizeOrder(tempData).slice(0, chosenGameMode.maxScore)
         console.log(newData);
-        
+
         dataChange(newData);
         changeGameMode(chosenGameMode);
     }
@@ -46,8 +50,6 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
                 }
 
                 const characterData = await response.json()
-                // console.log(characterData)
-
                 if (!ignore) {
                     handleSelectData(characterData)
                 }
@@ -71,6 +73,7 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
     console.log('running now')
 
     return (
+        <main className="main-game-container">
         <div className="start-game-container">
             Game Start
             <button
@@ -104,8 +107,11 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
                 dataChange = {dataChange}
                 gameMode = {gameMode}
                 changeGameMode = {changeGameMode}
+                cardStorage = {cardStorage}
+                changeCardMemory = {changeCardMemory}
             />}
         </div>
+        </main>
     )
 
 }
