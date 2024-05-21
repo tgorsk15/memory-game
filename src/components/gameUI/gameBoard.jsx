@@ -13,10 +13,12 @@ export function GameBoard({
     
 
     function handleCardClick(character) {
-        checkForRepeat(character)
+        const isRepeat =checkForRepeat(character)
+        if (isRepeat === false) (
+            addPoint()
+        )
 
-
-        addPoint()
+        
         
         // maybe create a temp variable here to equal gameMode.
         // then I can modify the score of hat variable, and then trigger
@@ -34,14 +36,30 @@ export function GameBoard({
         if (repeatCheck === false) {
             tempMemory.push(character);
             changeCardMemory(tempMemory)
+            return false
+
         } else if (repeatCheck === true) {
-            alert('Game Lost!')
+            loseGame()
         }
 
     }
 
     function addPoint() {
+        const tempGame = gameMode;
         // check for win here as well
+        console.log(tempGame)
+        tempGame.currentScore++
+        if (tempGame.currentScore === tempGame.maxScore) {
+            alert('game won!!')
+            return
+        }
+        console.log(tempGame)
+        console.log('point added')
+
+    }
+
+    function loseGame() {
+        alert('Game Lost!')
     }
 
     

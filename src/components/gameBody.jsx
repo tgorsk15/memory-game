@@ -21,7 +21,7 @@ export function GameStart({
 
     function adjustCharacterData(chosenGameMode, tempData) {
         const newData = randomizeOrder(tempData).slice(0, chosenGameMode.maxScore)
-        console.log(newData);
+        // console.log(newData);
 
         dataChange(newData);
         changeGameMode(chosenGameMode);
@@ -33,7 +33,6 @@ export function GameStart({
         for (let i = 0; i < 25; i++) {
             activeCharacters.push(characterData[i]);
         }
-        console.log(activeCharacters)
         dataChange(activeCharacters);
     }
 
@@ -69,8 +68,6 @@ export function GameStart({
 
     }, [])
 
-
-    console.log('running now')
 
     return (
         <main className="main-game-container">
