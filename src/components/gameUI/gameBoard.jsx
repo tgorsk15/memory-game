@@ -10,6 +10,7 @@ export function GameBoard({
 
     console.log(currentData)
     console.log(cardStorage);
+    console.log(gameMode);
     
 
     function handleCardClick(character) {
@@ -53,7 +54,7 @@ export function GameBoard({
             alert('game won!!')
             return
         }
-        console.log(tempGame)
+        changeGameMode(tempGame);
         console.log('point added')
 
     }
