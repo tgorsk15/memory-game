@@ -10,8 +10,21 @@ export function GameBoard({ currentData, dataChange, gameMode }) {
     // maybe trigger a function right away here that randomely shuffles the character
     // array, so that each time a card is clicked, a new order of cards is set
     function randomizeOrder(array) {
+        let currentIndex = array.lnegth;
 
+        while (currentIndex !== 0) {
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = 
+            [array[randomIndex], array[currentIndex]];
+        }
+        console.log(array)
+
+        return array
     }
+
+
 
     // use another useEffect() here??
     // maybe have the Effect just be a check to see if the card that was clicked
@@ -25,7 +38,8 @@ export function GameBoard({ currentData, dataChange, gameMode }) {
                     key={character.id}
                     className="card-container"
                 >
-                    <img src={character.image} alt="character" className="card-portrait" /> 
+                    <img src={character.image} alt="character" className="card-portrait" />
+                    <h3 className="character-title">{character.name}</h3> 
                 </div>
                 
                )

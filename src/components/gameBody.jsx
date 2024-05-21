@@ -88,6 +88,7 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
 
             {boardVisible && <GameBoard
                 currentData = {currentData}
+                dataChange = {dataChange}
                 gameMode = {gameMode}
             />}
         </div>
@@ -102,7 +103,7 @@ export function GameStart({ currentData, dataChange, gameMode, changeGameMode })
 // generate the initial gameboard of cards
 
 // the API fetch should happen once, when a Game Difficulty button has been clicked... OR
-// this couldhappen as soon as the page loads, to cut back on time, and preload 
+// this could happen as soon as the page loads, to cut back on time, and preload 
 // all characters.
 // the number of cards should be passed to the GameBoard component, and the cards should
 // be generated

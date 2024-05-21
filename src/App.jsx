@@ -6,6 +6,7 @@ import { Header } from './components/header';
 // import { easyGame, mediumGame, hardGame } from './components/data';
 
 import './App.css'
+import './styles/gameBoard.css'
 
 function App() {
   // this will set the number of cards of the game
