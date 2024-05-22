@@ -1,11 +1,9 @@
 export function Footer() {
 
-
-
     return (
-        <div className="footer-container">
+        <footer className="footer-container">
             Footer
-        </div>
+        </footer>
     )
 
 }
