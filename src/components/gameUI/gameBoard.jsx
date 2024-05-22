@@ -10,7 +10,6 @@ export function GameBoard({
 
     console.log(currentData)
     console.log(cardStorage);
-    console.log(gameMode);
     
 
     function handleCardClick(character) {
@@ -38,7 +37,7 @@ export function GameBoard({
         const repeatCheck = 
             cardStorage.some(item => JSON.stringify(item) === JSON.stringify(character))
         console.log(repeatCheck);
-        
+
         //  add to card Memory and change state if not a repeat:
         if (repeatCheck === false) {
             tempMemory.push(character);

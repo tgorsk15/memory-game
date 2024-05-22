@@ -7,7 +7,8 @@ import { randomizeOrder } from "./randomizeFunction";
 export function GameStart({ 
         currentData, dataChange, 
         gameMode, changeGameMode,
-        cardStorage, changeCardMemory    
+        cardStorage, changeCardMemory,
+        changeScoreVis
     }) {
     const [boardVisible, setBoardState] = useState(false);
 
@@ -16,7 +17,7 @@ export function GameStart({
 
         adjustCharacterData(chosenGameMode, tempCharacterData);
         setBoardState(true);
-        
+        changeScoreVis(true);
     }
 
     function adjustCharacterData(chosenGameMode, tempData) {

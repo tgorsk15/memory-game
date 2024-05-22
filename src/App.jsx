@@ -18,10 +18,14 @@ function App() {
   const [gameMode, setGameMode] = useState({});
   const [cardStorage, setCardMemory] = useState([]);
 
+  // visibility states:
+  const [scoreVisible, setScoreVis] = useState(false)
+
   return (
     <div className='main-container'>
       <Header
         gameMode = {gameMode}
+        scoreVisible = {scoreVisible}
       />
 
       <GameStart
@@ -31,6 +35,7 @@ function App() {
         changeGameMode = {setGameMode}
         cardStorage = {cardStorage}
         changeCardMemory = {setCardMemory}
+        changeScoreVis = {setScoreVis}
       />
 
       <Footer
