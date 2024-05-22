@@ -20,6 +20,7 @@ function App() {
 
   // visibility states:
   const [scoreVisible, setScoreVis] = useState(false)
+  const [gameStarted, isGameStarted] = useState(false)
 
   return (
     <div className='main-container'>
@@ -36,6 +37,8 @@ function App() {
         cardStorage = {cardStorage}
         changeCardMemory = {setCardMemory}
         changeScoreVis = {setScoreVis}
+        gameStarted = {gameStarted}
+        isGameStarted = {isGameStarted}
       />
 
       <Footer

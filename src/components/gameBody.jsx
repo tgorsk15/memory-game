@@ -8,7 +8,8 @@ export function GameStart({
         currentData, dataChange, 
         gameMode, changeGameMode,
         cardStorage, changeCardMemory,
-        changeScoreVis
+        changeScoreVis, gameStarted,
+        isGameStarted
     }) {
     const [boardVisible, setBoardState] = useState(false);
 
@@ -18,6 +19,7 @@ export function GameStart({
         adjustCharacterData(chosenGameMode, tempCharacterData);
         setBoardState(true);
         changeScoreVis(true);
+        isGameStarted(true);
     }
 
     function adjustCharacterData(chosenGameMode, tempData) {
@@ -73,34 +75,38 @@ export function GameStart({
 
     return (
         <main className="main-game-container">
-        <div className="start-game-container">
-            Game Start
-            <button
+        {!gameStarted && (
+            // style this tomorrow!! - 5/22
+            <div className="start-game-container">
+                Game Start
+                <button
 
-                onClick={(e) => {
-                    e.preventDefault()
-                    handleStartClick(easyGame);
-                }}
-            >
-                Easy
-            </button>
-            <button
-                onClick={(e) => {
-                    e.preventDefault()
-                    handleStartClick(mediumGame);
-                }}
-            >
-                Moderate
-            </button>
-            <button
-                onClick={(e) => {
-                    e.preventDefault()
-                    handleStartClick(hardGame);
-                }}
-            >
-                Challenging
-            </button>
-
+                    onClick={(e) => {
+                        e.preventDefault()
+                        handleStartClick(easyGame);
+                    }}
+                >
+                    Easy
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault()
+                        handleStartClick(mediumGame);
+                    }}
+                >
+                    Moderate
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault()
+                        handleStartClick(hardGame);
+                    }}
+                >
+                    Challenging
+                </button>
+            </div>
+        )}
+        
             {boardVisible && <GameBoard
                 currentData = {currentData}
                 dataChange = {dataChange}
@@ -109,7 +115,6 @@ export function GameStart({
                 cardStorage = {cardStorage}
                 changeCardMemory = {changeCardMemory}
             />}
-        </div>
         </main>
     )
 
