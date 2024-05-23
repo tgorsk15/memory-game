@@ -79,17 +79,24 @@ export function GameBoard({
             {!gameEnded && (
                 currentData.map((character) => {
                     return (
-                        <div
+                        <div 
+                            // put shadow box here for hover effect
+                            className='shadow-box'
                             key={character.id}
-                            className="card-container"
-                            onClick={(e) => {
-                                e.preventDefault()
-                                handleCardClick(character);
-                            }}
                         >
-                            <img src={character.image} alt="character" className="card-portrait" />
-                            <h3 className="character-title">{character.name}</h3> 
+                            <div
+                                
+                                className="card-container"
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    handleCardClick(character);
+                                }}
+                            >
+                                <img src={character.image} alt="character" className="card-portrait" />
+                                <h3 className="character-title">{character.name}</h3> 
+                            </div> 
                         </div>
+                        
                         
                     )
                 })
