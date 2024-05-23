@@ -1,6 +1,8 @@
 
 
-export function EndGameContent({ gameWon, onReset, setBoardState }) {
+export function EndGameContent({ 
+    gameWon, onReset, setBoardState 
+    }) {
     // this component appears when either a game has been WON or LOST
     // on a final cardCLick by the user
 
@@ -11,16 +13,24 @@ export function EndGameContent({ gameWon, onReset, setBoardState }) {
     return (
         <div className="reset-game-container">
             Reset
-            {/* will telluser if they won or lost */}
-            <p>
-
-            </p>
+            {gameWon && (
+                <p className="won-message">
+                    You won
+                </p>  
+            )}
+            
+            {!gameWon && (
+                <p className="lose-message">
+                    You lost
+                </p> 
+            )}
+            
             <button 
                 className="play-again-button"
                 onClick={(e) => {
                     e.preventDefault()
-                    console.log('reseting')
-                    setBoardState(false)
+                    console.log('reseting');
+                    setBoardState(false);
                     onReset();
                 }}
             >

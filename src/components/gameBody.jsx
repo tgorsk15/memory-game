@@ -118,6 +118,7 @@ export function GameStart({
         
         {gameEnded && <EndGameContent
             gameWon = {gameWon}
+            isGameWon = {isGameWon}
             onReset = {onReset}
             setBoardState = {setBoardState}
         />}
