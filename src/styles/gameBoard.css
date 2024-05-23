@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(6, minmax(125px, 1fr));
     column-gap: 80px;
-    row-gap: 10px;
+    row-gap: 20px;
     /* max-width: 1440px; */
     background-color: gainsboro;
 }
@@ -15,22 +15,71 @@
 .card-container {
     display: flex;
     flex-direction: column;
+    
     align-items: center;
-    max-width: 120px;
+    max-width: 130px;
     overflow-x: hidden;
-    border-left: 10px solid rgb(113, 101, 32);
-    background-color: goldenrod;
+    border-top: 10px solid rgb(176, 134, 105);
+    border-left: 10px solid rgb(176, 134, 105);
+    border-right: 10px solid rgb(176, 134, 105);
+    background-color: rgb(176, 134, 105);
+    max-height: 265px;
+    border-radius: 20px;
+    outline: 1px solid black;
 }
 
 .character-title {
     text-align: center;
     font-size: 16px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
+    margin: 10px 0px;
+    /* align-self: center; */
 }
 
 .card-portrait {
     height: 190px;
     
+}
+
+
+@media (max-width: 1400px) {
+    .gameboard-container {
+        column-gap: 50px;
+
+    }
+
+    .card-container {
+        max-width: 110px;
+
+    }
+
+    .card-portrait{
+        height: 160px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .gameboard-container {
+        column-gap: 40px;
+
+    }
+
+    .card-container {
+        max-width: 100px;
+
+    }
+
+    .card-portrait{
+        height: 140px;
+    }
+
+}
+
+@media (max-width: 950px) {
+    .gameboard-container {
+        grid-template-columns: repeat(3, minmax(125px, 1fr));
+    }
 }
 
 
