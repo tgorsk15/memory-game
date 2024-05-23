@@ -8,7 +8,7 @@ export function GameBoard({
         gameWon, isGameWon
     }) {
     // here each click of a card will trigger a re-render of the board
-    // re-order the cards
+    // and re-order the cards
 
     console.log(currentData)
     console.log(cardStorage);
@@ -25,11 +25,6 @@ export function GameBoard({
             }
         }
 
-        
-        
-        // maybe create a temp variable here to equal gameMode.
-        // then I can modify the score of hat variable, and then trigger
-        // the setGameMode function
     }
 
     function checkForRepeat(character) {
@@ -77,10 +72,6 @@ export function GameBoard({
     }
 
     
-
-    // use another useEffect() here??
-    // maybe have the Effect just be a check to see if the card that was clicked
-    // was already clicked before ... and then trigger a loss
 
     return (
         <div className="gameboard-container">

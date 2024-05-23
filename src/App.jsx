@@ -11,9 +11,6 @@ import './styles/pageStructure.css'
 import './styles/header.css'
 
 function App() {
-  // this will set the number of cards of the game
-  // const [cardCount, setCards] = useState(0);
-
   const [characterData, setData] = useState([])
   const [starterData, setStarterData] = useState([]);
   const [gameMode, setGameMode] = useState({});
@@ -27,10 +24,14 @@ function App() {
 
   function resetGame() {
     const dummyData = starterData
-    console.log(dummyData)
     setData(dummyData)
-    // setCardMemory([])
-    
+    gameMode.currentScore = 0;
+    setGameMode({})
+    isGameEnded(false)
+    isGameWon(false)
+    isGameStarted(false)
+    setCardMemory([])
+    setScoreVis(false)
   }
 
 

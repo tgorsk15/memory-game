@@ -1,6 +1,6 @@
 
 
-export function EndGameContent({ gameWon, onReset }) {
+export function EndGameContent({ gameWon, onReset, setBoardState }) {
     // this component appears when either a game has been WON or LOST
     // on a final cardCLick by the user
 
@@ -20,6 +20,7 @@ export function EndGameContent({ gameWon, onReset }) {
                 onClick={(e) => {
                     e.preventDefault()
                     console.log('reseting')
+                    setBoardState(false)
                     onReset();
                 }}
             >

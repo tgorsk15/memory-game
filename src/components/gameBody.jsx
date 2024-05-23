@@ -119,6 +119,7 @@ export function GameStart({
         {gameEnded && <EndGameContent
             gameWon = {gameWon}
             onReset = {onReset}
+            setBoardState = {setBoardState}
         />}
         
         {boardVisible && <GameBoard
