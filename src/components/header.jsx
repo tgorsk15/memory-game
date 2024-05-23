@@ -1,7 +1,15 @@
-export function Header({ gameMode, scoreVisible }) {
+import { useState } from "react"
 
-    // possibly need to implement findBestScore function here
-    // .. have the info be passed down in a new App prop
+export function Header({ gameMode, scoreVisible }) {
+    const [bestScore, setBestScore] = useState(0)
+
+
+    let dummyScore = bestScore;
+    if (dummyScore < gameMode.currentScore) {
+        dummyScore = gameMode.currentScore
+        setBestScore(dummyScore)
+    }
+
 
     return (
         <nav className="header-container">
@@ -13,7 +21,7 @@ export function Header({ gameMode, scoreVisible }) {
                             Score: {gameMode.currentScore} / {gameMode.maxScore}
                         </p>
                         <br />
-                        <p className="best-score"> Best Score: 0 </p>
+                        <p className="best-score"> Best Score: {bestScore} </p>
                     </>
                 )}
                 
