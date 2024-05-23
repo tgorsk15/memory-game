@@ -78,9 +78,11 @@ export function GameStart({
         {!gameStarted && (
             // style this tomorrow!! - 5/22
             <div className="start-game-container">
-                Game Start
+                <h3 className="difficulty-message">
+                    Select Game Difficulty
+                </h3>
                 <button
-
+                    className="easy-button"
                     onClick={(e) => {
                         e.preventDefault()
                         handleStartClick(easyGame);
@@ -89,6 +91,7 @@ export function GameStart({
                     Easy
                 </button>
                 <button
+                className="medium-button"
                     onClick={(e) => {
                         e.preventDefault()
                         handleStartClick(mediumGame);
@@ -97,6 +100,7 @@ export function GameStart({
                     Moderate
                 </button>
                 <button
+                    className="hard-button"
                     onClick={(e) => {
                         e.preventDefault()
                         handleStartClick(hardGame);
