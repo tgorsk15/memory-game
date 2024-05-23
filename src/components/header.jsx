@@ -11,7 +11,7 @@ export function Header({ gameMode, scoreVisible }) {
 
 
     return (
-        <nav className="header-container">
+        <header className="header-container">
             <h1 className="game-title">Harry Potter</h1>
             <div className="score-info">
                 {scoreVisible && (
@@ -25,6 +25,6 @@ export function Header({ gameMode, scoreVisible }) {
                 )}
                 
             </div>
-        </nav>
+        </header>
     )
 }

@@ -1,13 +1,36 @@
 .gameboard-container {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    display: grid;
+    grid-template-columns: repeat(6, minmax(125px, 1fr));
+    column-gap: 80px;
+    row-gap: 10px;
+    /* max-width: 1440px; */
+    background-color: gainsboro;
+}
+
+.card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 120px;
+    overflow-x: hidden;
+    border-left: 10px solid rgb(113, 101, 32);
+    background-color: goldenrod;
+}
+
+.character-title {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 8px;
 }
 
 .card-portrait {
-    height: 240px;
-    /* display: none; */
+    height: 190px;
+    
 }
 
 
