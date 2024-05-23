@@ -60,9 +60,9 @@ function App() {
         onReset = {resetGame}
       />
 
-      <Footer
+      {/* <Footer
 
-      />
+      /> */}
       {console.log(characterData)}
 
     </div>

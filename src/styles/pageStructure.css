@@ -6,6 +6,8 @@ html {
 body {
     min-height: 100vh;
     margin: 0px;
+    background-image: url('./../assets/hogwarts.jpg');
+    background-size: cover;
 }
 
 #root {
@@ -24,7 +26,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center; 
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 110px);
     min-width: 1440px;
 }
 
@@ -50,10 +52,10 @@ body {
 
 
 
-.footer-container {
+/* .footer-container {
     height: 30px;
     background-color: rgb(95, 95, 112);
-}
+} */
 
 @media (max-width: 1440px) {
     .main-game-container {
@@ -68,7 +70,7 @@ body {
 }
 
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
     .main-game-container {
         min-width: 500px;
     }
