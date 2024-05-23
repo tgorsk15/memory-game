@@ -118,7 +118,6 @@ export function GameStart({
         
         {gameEnded && <EndGameContent
             gameWon = {gameWon}
-            isGameWon = {isGameWon}
             onReset = {onReset}
             setBoardState = {setBoardState}
         />}
@@ -150,10 +149,6 @@ export function GameStart({
 
 // the number of cards generated on the GameBoard component will depend on what
 // difficulty the user selected at the beginning of the game
-
-// make an array that stores the IDs of each unique card when one is clicked.
-// whenever the user clicks on a card, it must get checked against the array to
-// see if that card has been clicked before ... and then trigger a lose game event
 
 // a round should run a max amount of times ... if the counter for the number
 // of click events equals the max amount, then the won game mechanism is triggered

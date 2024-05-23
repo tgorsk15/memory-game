@@ -13,8 +13,9 @@ body {
 }
 
 .main-container {
-    display: grid;
-    grid-template-rows: 1.2fr 9fr .6fr;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 1.2fr 9fr .6fr; */
     min-height: 100vh;
 }
 
@@ -41,7 +42,8 @@ body {
 
 
 .footer-container {
-    grid-row: 3;
+    /* grid-row: 3; */
+    height: 30px;
     background-color: rgb(95, 95, 112);
 }
 

@@ -3,7 +3,6 @@ import { useState } from "react"
 export function Header({ gameMode, scoreVisible }) {
     const [bestScore, setBestScore] = useState(0)
 
-
     let dummyScore = bestScore;
     if (dummyScore < gameMode.currentScore) {
         dummyScore = gameMode.currentScore
