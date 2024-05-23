@@ -15,12 +15,24 @@ function App() {
   // const [cardCount, setCards] = useState(0);
 
   const [characterData, setData] = useState([])
+  const [starterData, setStarterData] = useState([]);
   const [gameMode, setGameMode] = useState({});
   const [cardStorage, setCardMemory] = useState([]);
 
   // visibility states:
   const [scoreVisible, setScoreVis] = useState(false)
   const [gameStarted, isGameStarted] = useState(false)
+  const [gameEnded, isGameEnded] = useState(false)
+  const [gameWon, isGameWon] = useState(false)
+
+  function resetGame() {
+    const dummyData = starterData
+    console.log(dummyData)
+    setData(dummyData)
+    // setCardMemory([])
+    
+  }
+
 
   return (
     <div className='main-container'>
@@ -39,6 +51,12 @@ function App() {
         changeScoreVis = {setScoreVis}
         gameStarted = {gameStarted}
         isGameStarted = {isGameStarted}
+        gameEnded = {gameEnded}
+        isGameEnded = {isGameEnded}
+        gameWon = {gameWon}
+        isGameWon = {isGameWon}
+        setStarterData = {setStarterData}
+        onReset = {resetGame}
       />
 
       <Footer

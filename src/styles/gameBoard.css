@@ -9,3 +9,10 @@
     height: 240px;
     /* display: none; */
 }
+
+
+
+/* reset game event */
+.reset-game-container {
+    background-color: rgb(150, 112, 186);
+}

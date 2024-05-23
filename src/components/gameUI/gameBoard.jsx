@@ -3,7 +3,9 @@ import { randomizeOrder } from './../randomizeFunction';
 export function GameBoard({ 
         currentData, dataChange, 
         gameMode, changeGameMode,
-        cardStorage, changeCardMemory
+        cardStorage, changeCardMemory,
+        gameEnded, isGameEnded,
+        gameWon, isGameWon
     }) {
     // here each click of a card will trigger a re-render of the board
     // re-order the cards
@@ -56,7 +58,7 @@ export function GameBoard({
         console.log(tempGame)
         tempGame.currentScore++
         if (tempGame.currentScore === tempGame.maxScore) {
-            alert('game won!!')
+            winGame();
             return false
         }
         changeGameMode(tempGame);
@@ -65,7 +67,13 @@ export function GameBoard({
     }
 
     function loseGame() {
+        isGameEnded(true)
         alert('Game Lost!')
+    }
+
+    function winGame() {
+        isGameEnded(true)
+        alert('game won!!')
     }
 
     
@@ -76,22 +84,26 @@ export function GameBoard({
 
     return (
         <div className="gameboard-container">
-            {currentData.map((character) => {
-               return (
-                <div
-                    key={character.id}
-                    className="card-container"
-                    onClick={(e) => {
-                        e.preventDefault()
-                        handleCardClick(character);
-                    }}
-                >
-                    <img src={character.image} alt="character" className="card-portrait" />
-                    <h3 className="character-title">{character.name}</h3> 
-                </div>
-                
-               )
-            })}
+            {!gameEnded && (
+                currentData.map((character) => {
+                    return (
+                        <div
+                            key={character.id}
+                            className="card-container"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handleCardClick(character);
+                            }}
+                        >
+                            <img src={character.image} alt="character" className="card-portrait" />
+                            <h3 className="character-title">{character.name}</h3> 
+                        </div>
+                        
+                    )
+                })
+
+            )}
+            
             
         </div>
     )
