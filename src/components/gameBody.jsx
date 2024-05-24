@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 import { GameBoard } from "./gameUI/gameBoard";
 import { EndGameContent } from "./endGame";
+// import { backgroundMusic } from "./gameUI/music";
+import gameMusic from './../assets/app-music.mp3'
 
 import { easyGame, mediumGame, hardGame } from "./data";
 import { randomizeOrder } from "./randomizeFunction";
-
 
 
 export function GameStart({ 
@@ -18,11 +19,13 @@ export function GameStart({
         onReset
     }) {
     const [boardVisible, setBoardState] = useState(false);
+    const [musicPlaying, setMusic] = useState(false)
 
     function handleStartClick(chosenGameMode) {
         const tempCharacterData = [...currentData];
 
         adjustCharacterData(chosenGameMode, tempCharacterData);
+        setMusic(true)
         setBoardState(true);
         changeScoreVis(true);
         isGameStarted(true);
@@ -42,9 +45,8 @@ export function GameStart({
             activeCharacters.push(characterData[i]);
         }
         dataChange(activeCharacters);
+        // set a new state here that holds this starting form of data for good
         setStarterData(activeCharacters);
-        // set a new state here that holds this starting form of data
-        // forever
     }
 
 
@@ -78,6 +80,27 @@ export function GameStart({
         };
 
     }, [])
+
+
+    // for setting music up
+    useEffect(() => {
+        const gameAudio = new Audio(gameMusic)
+        if (musicPlaying) {
+            gameAudio.play();
+            gameAudio.addEventListener('ended', () => {
+                gameAudio.play();
+            })
+        }
+
+        return () => {
+            gameAudio.removeEventListener('ended', () => {
+                gameAudio.play()
+            })
+        }
+
+
+
+    }, [musicPlaying])
 
 
     return (
@@ -156,5 +179,5 @@ export function GameStart({
 
 // Card clicks re-render the board, checks are done to see if game is won or lost
 
-// App.jsx has to trigger the "Select Game Type screen"... then once the user selects
-// their game, the gameApp itself will be triggered
+// The "Select Game Difficulty" is theintial display... the game itself will 
+// be triggered once the user selects a difficulty

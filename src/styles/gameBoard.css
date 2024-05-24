@@ -13,8 +13,6 @@
     grid-template-columns: repeat(6, minmax(125px, 1fr));
     column-gap: 80px;
     row-gap: 26px;
-    /* max-width: 1440px; */
-    /* background-color: gainsboro; */
     margin-bottom: 33px;
 }
 
@@ -53,9 +51,7 @@
 .character-title {
     text-align: center;
     font-size: 16px;
-    /* margin-top: 8px; */
     margin: 10px 0px;
-    /* align-self: center; */
 }
 
 .card-portrait {

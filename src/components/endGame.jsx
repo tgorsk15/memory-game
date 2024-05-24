@@ -8,7 +8,6 @@ export function EndGameContent({
 
     // gives user a Play Again option
 
-
     return (
         <div className="reset-game-container">
             {gameWon && (
