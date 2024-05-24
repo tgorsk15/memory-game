@@ -159,3 +159,19 @@
     width: 35%;
     margin-bottom: 20px;
 }
+
+.play-again-button {
+    will-change: transform;
+    background: none;
+    border: none;
+    transition: all 400ms ease-in;
+    font-family: endFont;
+    font-weight: bold;
+    color: white;
+}
+
+.play-again-button:hover {
+    transform: scale(1.1);
+    color: rgb(89, 73, 141);
+    text-shadow: 0px 0px 15px rgb(210, 210, 210);
+}
