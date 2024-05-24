@@ -110,8 +110,8 @@
 
 /* reset game event */
 .reset-game-container {
-    height: 220px;
-    width: 280px;
+    height: 270px;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -119,16 +119,36 @@
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     background: rgb(44,44,45);
     background: radial-gradient(circle, rgba(44,44,45,1) 11%, rgba(190,154,53,1) 100%);
     border: 4px solid rgb(76, 76, 75);
     padding: 8px;
     border-radius: 25px;
-    color: rgb(197, 196, 196);
+    color: rgb(210, 208, 208);
+    box-shadow: 0px 0px 20px 0px rgb(58, 58, 58);
 }
 
-.won-message, .lose-mesage {
+.won-message, .lose-message {
     text-align: center;
+    font-size: 22px;
+}
+
+.won-message {
+    margin-bottom: 0px;
+}
+
+.lose-gif {
+    font-size: 20px;
+    border: none;
+    height: 35%;
+    width: 35%;
+    margin-bottom: 20px;
+}
+
+.win-gif {
+    height: 35%;
+    width: 35%;
+    margin-bottom: 20px;
 }

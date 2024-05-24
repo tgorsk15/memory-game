@@ -12,15 +12,23 @@ export function EndGameContent({
     return (
         <div className="reset-game-container">
             {gameWon && (
-                <p className="won-message">
-                    You have mastered the Room of Requirement !!
-                </p>  
+                <>
+                    <p className="won-message">
+                        You have mastered the Room of Requirement !!
+                    </p>
+                    <iframe src="https://giphy.com/embed/zC99Tr1riCeB1vv9ec" width="466" height="480" frameBorder="0" className="win-gif">
+                    </iframe>
+                </>
             )}
             
             {!gameWon && (
-                <p className="lose-message">
-                    You have failed the challenge ...
-                </p> 
+                <>
+                    <p className="lose-message">
+                        You have failed the challenge ...
+                    </p>
+                    <iframe src="https://giphy.com/embed/3o7bu8wHMiBqpCdmo0" width="200" height="200" className="lose-gif">
+                    </iframe>
+                 </>
             )}
             
             <button 

@@ -3,9 +3,8 @@ import { useState } from 'react'
 import { Footer } from './components/footer';
 import { GameStart } from './components/gameBody';
 import { Header } from './components/header';
-// import { easyGame, mediumGame, hardGame } from './components/data';
 
-import './App.css'
+
 import './styles/gameBoard.css'
 import './styles/pageStructure.css'
 import './styles/header.css'
