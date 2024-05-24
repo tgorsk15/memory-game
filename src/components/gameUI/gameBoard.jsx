@@ -63,13 +63,11 @@ export function GameBoard({
 
     function loseGame() {
         isGameEnded(true)
-        alert('Game Lost!')
     }
 
     function winGame() {
         isGameEnded(true)
         isGameWon(true);
-        alert('game won!!')
     }
 
     

@@ -3,6 +3,11 @@
     src: url(./../assets/blessing-font.ttf);
 }
 
+@font-face {
+    font-family: endFont;
+    src: url(./../assets/lumos.ttf);
+}
+
 .header-container {
     height: 110px;
     display: flex;
@@ -33,6 +38,9 @@
     display: flex;
     align-items: center;
     color: white;
+    font-family: endFont;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .current-score {
