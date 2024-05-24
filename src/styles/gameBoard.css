@@ -1,3 +1,8 @@
+@font-face {
+    font-family: characterFont;
+    src: url(./../assets/character-font.ttf);
+}
+
 .gameboard-container {
     display: grid;
     grid-template-columns: repeat(6, minmax(125px, 1fr));
@@ -22,15 +27,14 @@
     align-items: center;
     width: 145px;
     overflow-x: hidden;
-    /* border-top: 10px solid rgb(124, 153, 182); */
     border-top: 10px solid rgb(141, 121, 121);
     border-left: 10px solid rgb(141, 121, 121);
     border-right: 10px solid rgb(141, 121, 121);
     background-color: rgb(141, 121, 121);
-    /* background-color: rgb(176, 134, 105); */
     max-height: 265px;
     border-radius: 20px;
     outline: 1px solid black;
+    font-family: characterFont;
     box-shadow: 0px 0px 12px rgb(66, 66, 66);
     transition: all 300ms ease-in-out;
     z-index: 1;
