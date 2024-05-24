@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import { Footer } from './components/footer';
 import { GameStart } from './components/gameBody';
 import { Header } from './components/header';
 
@@ -58,11 +57,6 @@ function App() {
         setStarterData = {setStarterData}
         onReset = {resetGame}
       />
-
-      {/* <Footer
-
-      /> */}
-      {console.log(characterData)}
 
     </div>
     

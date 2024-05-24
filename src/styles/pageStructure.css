@@ -1,3 +1,9 @@
+@font-face {
+    font-family: endFont;
+    src: url(./../assets/lumos.ttf);
+}
+
+
 html {
     margin: 0px;
     min-height: 100%;
@@ -39,23 +45,43 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     background-color: rgb(223, 208, 126);
     height: 240px;
     width: 240px;
-    padding: 15px;
+    padding: 20px;
+    font-family: endFont;
+    box-shadow: 0px 0px 23px 0px black;
+}
+
+.difficulty-message {
+    font-size: 21px;
 }
 
 .start-game-container > button {
-    width: 130px;
-    margin-top: 10px;
+    height: 70px;
+    width: 150px;
+    font-family: endFont;
+    font-size: 18px;
+    background-color: rgb(107, 89, 60);
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    transition: all 250ms ease-out;
+    will-change: transform;
+}
+
+.start-game-container > button:hover {
+    transform: scaleX(1.2);
+    color: rgb(133, 107, 218);
+    text-shadow: 0px 0px 10px rgb(61, 61, 61);
+    /* -webkit-text-fill-color: rgb(133, 107, 218);
+    -webkit-text-stroke-width: 0.25px;
+    color: white; */
 }
 
 
 
-/* .footer-container {
-    height: 30px;
-    background-color: rgb(95, 95, 112);
-} */
 
 @media (max-width: 1440px) {
     .main-game-container {
