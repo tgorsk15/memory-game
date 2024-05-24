@@ -6,22 +6,20 @@ export function EndGameContent({
     // this component appears when either a game has been WON or LOST
     // on a final cardCLick by the user
 
-    // this cntainer will have a a play again button, that will reset all states
-    // and bring user back to the select difficulty container
+    // gives user a Play Again option
 
 
     return (
         <div className="reset-game-container">
-            Reset
             {gameWon && (
                 <p className="won-message">
-                    You won
+                    You have mastered the Room of Requirement !!
                 </p>  
             )}
             
             {!gameWon && (
                 <p className="lose-message">
-                    You lost
+                    You have failed the challenge ...
                 </p> 
             )}
             

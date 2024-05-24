@@ -1,4 +1,6 @@
 import { useState } from "react"
+import logo from './../assets/logo2.png'
+
 
 export function Header({ gameMode, scoreVisible }) {
     const [bestScore, setBestScore] = useState(0)
@@ -12,7 +14,11 @@ export function Header({ gameMode, scoreVisible }) {
 
     return (
         <header className="header-container">
-            <h1 className="game-title">Harry Potter</h1>
+            <div className="title-container">
+                <img src={logo} alt="logo" className="logo-pic" />
+                <h1 className="game-title">The Room of Requirement</h1> 
+            </div>
+            
             <div className="score-info">
                 {scoreVisible && (
                     <>

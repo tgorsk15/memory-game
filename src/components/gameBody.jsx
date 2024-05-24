@@ -6,6 +6,7 @@ import { easyGame, mediumGame, hardGame } from "./data";
 import { randomizeOrder } from "./randomizeFunction";
 
 
+
 export function GameStart({ 
         currentData, dataChange, 
         gameMode, changeGameMode,
