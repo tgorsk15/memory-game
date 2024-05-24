@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { GameBoard } from "./gameUI/gameBoard";
 import { EndGameContent } from "./endGame";
-// import { backgroundMusic } from "./gameUI/music";
 import gameMusic from './../assets/app-music.mp3'
 
 import { easyGame, mediumGame, hardGame } from "./data";

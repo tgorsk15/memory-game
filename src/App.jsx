@@ -2,8 +2,6 @@ import { useState } from 'react'
 
 import { GameStart } from './components/gameBody';
 import { Header } from './components/header';
-// import { backgroundMusic } from './components/gameUI/music';
-
 
 import './styles/gameBoard.css'
 import './styles/pageStructure.css'
